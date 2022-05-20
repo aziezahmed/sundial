@@ -5,7 +5,8 @@
   "main": "dist/app.js",
   "scripts": {
     "start": "tsc && node dist/app.js",
-    "lint": "eslint . --ext .ts",
+    "dev": "tsc-watch --onSuccess \"node dist/app.js\"",
+    "lint": "eslint -c .eslintrc.js --ext .ts src/ --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,11 +17,14 @@
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "eslint": "^8.15.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "tsc-watch": "^5.0.3"
   },
   "dependencies": {
     "@types/suncalc": "^1.8.1",
     "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "luxon": "^2.4.0",
     "suncalc": "^1.9.0"
   }
 }
